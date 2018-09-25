@@ -1,0 +1,55 @@
+.testheader {
+  width: 100%;
+  height: 200px;
+  background-color: $meat;
+  h1 {
+    font-family: $kooky;
+    font-size: 36pt;
+    color: $cheese;
+    text-shadow: 2px 2px $lettuce;
+  }
+  p {
+    font-family: $plain;
+    font-size: 24pt;
+    color: $cheese;
+    text-shadow: 1px 1px $lettuce;
+  }
+}
+
+.box {
+  width: 200px;
+  height: 250px;
+  p {
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
+
+div.bread {
+  @include bg-check();
+}
+
+p.bread {
+  color: $bread;
+}
+
+div.lettuce {
+  background-color: $lettuce;
+}
+p.lettuce {
+  color: $lettuce;
+}
+
+div.meat {
+  background-color: $meat;
+}
+p.meat {
+  color: $meat;
+}
+
+div.cheese {
+  background-color: $cheese;
+}
+p.cheese {
+  color: $cheese;
+}

@@ -1,0 +1,144 @@
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+  font-family: $plain;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  @include flexbox(row, space-between, flex-end);
+  position: fixed;
+  top: 0;
+  background-color: $bread;
+  height: 100px;
+  width: 100%;
+  margin-bottom: $margins;
+}
+
+.buffer {
+  height: 110px;
+}
+
+.logo-container {
+  @include flexbox(row, center, center);
+  height: 100%;
+  min-width: 300px;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
+
+.button-container {
+  @include flexbox(row, flex-end, flex-end);
+  margin-left: 15px;
+  margin-bottom: 12px;
+  height: 100%;
+}
+
+.button {
+  @include flexbox(row, center, center);
+  color: $meat;
+  left: 0;
+  height: 50px;
+  width: 70px;
+  border: 3px solid $lettuce;
+  border-radius: 25%;
+  background-color: $bread;
+  margin-right: $margins;
+  z-index: 10;
+  &:hover {
+    animation: buttonexpand 1s forwards;
+  }
+  a {
+    text-decoration: none;
+    color: $meat;
+  }
+}
+
+.about-container {
+  @include flexbox(column, space-around, center);
+  border: 2px solid $meat;
+  background-color: $cheese;
+  color: $meat;
+  height: 100%;
+  h1 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.carousel {
+  max-height: 500px;
+  img {
+    overflow: hidden;
+  }
+}
+
+.kooky {
+  font-family: $kooky;
+}
+
+#hours-card {
+  background-color: $meat;
+  text-align: center;
+  color: $cheese;
+  width: 300px;
+  a {
+    color: $cheese;
+  }
+}
+#hours-card-logo {
+  width: 100%;
+  @include flexbox(row, center, center);
+  img {
+    width: 100px;
+  }
+}
+#hours-card-reveal {
+  background-color: $bread;
+  .card-title {
+    color: $cheese;
+    font-family: $kooky;
+  }
+}
+
+.side-bar {
+  @include bg-check();
+  width: $margins;
+  height: 100%;
+}
+
+.cross-bar {
+  @include bg-check();
+  width: 100%;
+  height: $margins;
+}
+
+// Animations //
+
+@keyframes buttonexpand {
+  0% {
+    transform: translateY(0);
+    font-size: 1rem;
+    height: 50px;
+    margin-right: $margins;
+    background-color: $bread;
+    z-index: 10000;
+  }
+  100% {
+    transform: translateY(20px);
+    font-size: 1.2rem;
+    height: 70px;
+    background-color: $cheese;
+    z-index: 10000;
+  }
+}
