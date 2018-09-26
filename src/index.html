@@ -39,30 +39,61 @@
     <div class="buffer">
     </div>
 
-    <div class="carousel carousel-slider center z-depth-2" data-indicators="true">
+    <div class="carousel carousel-slider center z-depth-2 carousel-home" data-indicators="true">
       <div class="carousel-fixed-item center">
       </div>
       <div class="carousel-item red white-text" href="#one!">
         <img src="img/tasty-sandwich.jpg">
       </div>
       <div class="carousel-item amber white-text" href="#two!">
-        <img src="img/stock-photo.jpg">
+        <img src="img/screengrab10.png">
       </div>
       <div class="carousel-item green white-text" href="#three!">
-        <img src="img/salty-meats.jpg">
+        <img src="img/stock-photo.jpg">
       </div>
       <div class="carousel-item blue white-text" href="#four!">
-        <img src="img/jon-at-work.png">
+        <img src="img/screengrab5.png">
       </div>
     </div>
 
-    <div class="main">
-      main
+    <div class="map-container z-depth-2">
+      <div class="storefront">
+        <img src="img/screengrab1.png">
+      </div>
+      <div class="map-panel" id="map">
+
+      </div>
     </div>
     <div class="footer">
       footer
     </div>
 
 <a href="colors.html">Color demo</a>
+
+<script>
+function initMap() {
+  var nickysLoc = {
+    lat: 40.762221,
+    lng: -73.980320
+  }
+
+  var map = new google.maps.Map(
+    document.getElementById('map'),
+    {
+      zoom: 4,
+      center: nickysLoc
+    }
+  );
+
+  var marker = new google.maps.Marker({
+    position: nickysLoc,
+    map: map
+  });
+
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiuMX1c39HDUaJj6UMffxhLljcrYIocYw&callback=initMap">
+</script>
   </body>
 </html>
